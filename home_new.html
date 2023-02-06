@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+        <title>Home</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="styles_new.css">
+    </head>
+    <body>
+            <div id="nav-placeholder">
+
+            </div>
+            <!-- main -->
+            <div class="main">
+                <div class="topbar">
+                    <div class="toggle"><span class="material-symbols-outlined">menu</span></div>
+                    <div class="toggle" id="user-button"><span class="material-symbols-outlined">person</span></div>
+                </div>
+                <!-- cards -->
+                <div class="cardBox">
+                    <div class="card">
+                        <div>
+                            <div class="numbers">3000</div>
+                            <div class="cardName">Calories</div>
+                        </div>
+                        <div class="fireIcon">
+                            <span class="material-symbols-outlined">local_fire_department</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div>
+                            <div class="numbers">2435</div>
+                            <div class="cardName">Steps</div>
+                        </div>
+                        <div class="stepsIcon">
+                            <span class="material-symbols-outlined">footprint</span>                        </div>
+                        </div>
+                    <div class="card">
+                        <div>
+                            <div class="numbers">7h 10m</div>
+                            <div class="cardName">Sleep</div>
+                        </div>
+                        <div class="fireIcon">
+                            <span class="material-symbols-outlined">bedtime</span>                        </div>
+                        </div>
+                </div>
+
+            </div>
+
+
+            
+
+
+        </div>
+        <script>
+            $(function(){
+                $("#nav-placeholder").load("nav_bar.html");
+            });
+        </script>
+        
+    
+    </body>
+</html>
