@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+        <title>Home</title>
+
+        <!-- Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> 
+        <!-- Icons -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+        <!-- Custom CSS stylesheet -->
+        <link rel="stylesheet" href="css/styles.css">
+
+        
+    </head>
+
+    <body>
+        <div class="grid-container">
+            <!--Header used as container as head section-->
+            <header class="header">
+                <div class="menu-icon" onclick="openSidebar()">
+                    <span class="material-symbols-outlined">menu</span>
+                </div>
+                <div class="header-left">
+                    <span class="material-symbols-outlined">search</span>
+                </div>
+                <div class="header-right"></div>
+            </header>
+
+            <!--Aside used mainly for content unrelated to the webpage like sidebar and ads-->
+            <aside id="sidebar">
+                <div class="sidebar-title">
+                    <div class="sidebar-brand">
+                        <span class="material-symbols-outlined">inventory</span> Fitness Dashboard
+                    </div>
+                    <span class="material-symbols-outlined" onclick="closeSidebar()">close</span>
+                </div>
+                <ul class="sidebar-list">
+                    <li class="sidebar-list-item">
+                        <span class="material-symbols-outlined">grid_view</span> Dashboard
+                    </li>
+                    <li class="sidebar-list-item">
+                        <span class="material-symbols-outlined">settings</span> Settings
+                    </li>
+                </ul>
+            </aside>
+
+
+            <!-- Main specifies the main content of the website. Should not contain any repeating content-->
+            <main class="main-container">
+                <div class="main-title">
+                    <p class="font-weight-bold">Dashboard</p>
+                </div>
+                <div class="main-cards">
+                    <div class="card">
+                        <div class="card-inner">
+                            <p class="text-primary">STEPS </p>
+                            <span class="material-symbols-outlined text-green">footprint</span>
+
+                        </div>
+                        <span class="text-primary font-weight-bold">562</span>
+                        
+                    </div>
+
+                    <div class="card">
+                        <div class="card-inner">
+                            <p class="text-primary">CALORIES</p>
+                            <span class="material-symbols-outlined text-orange">local_fire_department</span>
+                        </div>
+                        <span class="text-primary font-weight-bold">2489</span>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-inner">
+                            <p class="text-primary">SLEEP</p>
+                            <span class="material-symbols-outlined text-blue">bedtime</span>
+                        </div>
+                        <span class="text-primary font-weight-bold">7h 42m</span>
+                    </div>
+                </div>
+                <div class="charts">
+                    <div class="charts-card">
+                        <p class="chart-title">Calorie goal</p>
+                        <div class="chart-icon">
+                            <span class="material-symbols-outlined text-orange md-30">local_fire_department</span>
+                        </div>
+                        <div id="radial-chart">
+                            <canvas id="calorie-chart"></canvas>
+                        </div>
+                        <div class="chart-text" id="caloriesRemaining-placeholder">
+                            
+                        </div>
+                    </div>
+                        
+                    <div class="charts-card">
+                        <p class="chart-title">Steps over the week</p>
+                        <div id="line-chart">
+                                
+                        </div>
+                    </div>
+                    <div class="charts-card">
+                        <p class="chart-title"> ChartJs</p>
+                        <canvas id="myChart"></canvas>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+
+
+
+       
+        <!-- Apex Charts  -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.36.3/apexcharts.min.js" integrity="sha512-sa449wQ9TM6SvZV7TK7Zx/SjVR6bc7lR8tRz1Ar4/R6X2jOLaFln/9C+6Ak2OkAKZ/xBAKJ94dQMeYa0JT1RLg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+         <!-- Custom JavaScript -->
+         <script src="js/scripts.js"></script>
+
+         
+        
+    </body>
+</html>

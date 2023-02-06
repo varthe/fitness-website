@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+        <title>Sign up</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="styles_new.css">
+        <link rel="stylesheet" type="text/css" href="login_styles.css">
+
+    </head>
+    <body>
+            <div id="nav-placeholder">
+
+            </div>
+            <div class="main">
+                <div class="topbar">
+                    <div class="toggle"><span class="material-symbols-outlined">menu</span></div>
+                    <div class="toggle" id="user-button"><a href="login.html"><span class="material-symbols-outlined">person</span></a></div>
+
+                </div>
+            <div class="postForm">
+                <form ref="signupForm" id="signupForm" action="/signup" method="post" encType="multipart/form-data">
+                    <label for="username">
+                        <span class="material-symbols-outlined">person</span>
+                    </label>
+                    <input type="text" name="username" placeholder="Username" required />
+                    
+                    <label for="password">
+                        <span class="material-symbols-outlined">key</span>
+                    </label>
+                    <input type="password" name="password" placeholder="Password" required />
+                    <label for="name">
+                        <span class="material-symbols-outlined">badge</span>
+                    </label>
+                    <input type="text" name="name" placeholder="First name" required />
+                    <p id="accountText">Already have an account? </p>
+                    <a id="loginLink" href="login.html">Log in!</a>
+                    <input type="submit" value="Sign Up" />
+                </form>
+            </div>
+        </div>
+
+
+    </body>
+    <script>
+        $(function(){
+            $("#nav-placeholder").load("nav_bar.html");
+        });
+    </script>
+</html>

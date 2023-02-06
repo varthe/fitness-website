@@ -1,0 +1,60 @@
+<!-- Font -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> 
+<!-- Icons -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<!-- Stylesheet -->
+<link rel="stylesheet" type="text/css" href="styles_new.css">
+
+
+<div class="container">
+    <div class="navigation">
+        <ul>
+            <li>
+                <a href="X">
+                    <span class="icon"></span>
+                    <span class="title">Name</span>
+                </a>
+            </li>
+            <li>
+                <a href="/upload">
+                    <span class="icon"></span>
+                    <span class="title"><span class="material-symbols-outlined">upload</span>Upload</span>
+                </a>
+            </li>
+            <li>
+                <a href="dashboard.html">
+                    <span class="icon"></span>
+                    <span class="title"><span class="material-symbols-outlined">grid_view</span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="X">
+                    <span class="icon"></span>
+                    <span class="title"><span class="material-symbols-outlined">settings</span>Settings</span>
+                </a>
+            </li>
+            
+            
+        </ul>
+    </div>
+    <!--main-->
+    <script>
+        let list = document.querySelectorAll(".navigation li");
+        let toggle = document.querySelector(".toggle");
+        let navigation = document.querySelector(".navigation");
+        let main = document.querySelector(".main");
+
+        toggle.onclick = function(){
+            navigation.classList.toggle("active");
+            main.classList.toggle("active");
+        }
+
+        function activeLink(){
+            list.forEach((item) => 
+            item.classList.remove("hovered"));
+            this.classList.add("hovered");
+        }
+        list.forEach((item) => 
+        item.addEventListener("mouseover", activeLink));
+
+    </script>

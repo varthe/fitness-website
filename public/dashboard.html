@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+        <title>Home</title>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="styles_new.css">
+        <script src="charts.js" type="text/javascript"></script> 
+
+    </head>
+    <body>
+            <div id="nav-placeholder">
+
+            </div>
+            
+            <!-- main -->
+            <div class="main">
+                <div class="topbar">
+                    <div class="toggle"><span class="material-symbols-outlined">menu</span></div>
+                    <div class="toggle" id="user-button"><a href="login.html"><span class="material-symbols-outlined">person</span></a></div>
+
+                </div>
+                <!-- cards -->
+                <div class="cardBox">
+                    <div class="card">
+                            <div>
+                                <div class="numbers" id="distance-day"></div>
+                                <div class="cardName">Distance</div>
+                            </div>
+
+                            <div class="distanceIcon">
+                                <span class="material-symbols-outlined text-green">hiking</span>
+                            </div>
+                    </div>
+                    <div class="card">
+                        <div>
+                            <div class="numbers" id="calories-day"></div>
+                            <div class="cardName">Calories</div>
+                        </div>
+                        <div class="fireIcon">
+                            <span class="material-symbols-outlined text-orange">local_fire_department</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div>
+                            <div class="numbers" id="steps-day"></div>
+                            <div class="cardName">Steps</div>
+                        </div>
+                        <div class="stepsIcon">
+                            <span class="material-symbols-outlined text-blue">footprint</span>                        </div>
+                        </div>
+                    
+                    </div>
+
+
+                <div class="chartCardBox">
+                    <div class="chartCard">
+                        <div class="chart">
+                            <canvas id="polar-chart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chartCard">
+                        <div class="chart">
+                            <canvas id="radar-chart"></canvas>
+                        </div>
+                        
+                    </div>
+                  
+                    
+                </div>
+                <canvas id="chart"></canvas>
+
+            </div>
+
+
+            
+
+
+        </div>
+        <script>
+            var dates = "<%= dates %>".split(",");
+            var distance = "<%= distance %>".split(",");
+            var calories = "<%= calories %>".split(",");
+            var steps = "<%= steps %>".split(",");
+
+            goalDistance = 10;
+            goalCalories = 2500;
+            goalSteps = 10000;
+
+            dailyDistance = distance[distance.length - 1];
+            dailyCalories = calories[calories.length - 1];
+            dailySteps = steps[steps.length - 1];
+
+            document.getElementById("distance-day").append(dailyDistance);
+            document.getElementById("calories-day").append(dailyCalories);
+            document.getElementById("steps-day").append(dailySteps);
+            
+
+            console.log(dates);
+            console.log(calories);
+            console.log(steps);
+
+   
+            
+            
+            getPolarAreaSummaryChart(document.getElementById("polar-chart"),
+             (dailyDistance / goalDistance) * 100,
+             (dailyCalories / goalCalories) * 100,
+              (dailySteps / goalSteps) * 100);
+            
+            getCountryComparisonChart(document.getElementById("radar-chart"), "United Kingdom",
+            dailyDistance, dailyCalories, dailySteps);
+            
+            
+
+            //getDoughnutCalorieChart(document.getElementById("calorie-chart"), 
+            //dailyCalories, 3000 - dailyCalories);
+
+            //getLineChart(ctx, dates, calories, "Calories");
+            /*
+            new Chart(ctx, {
+                type: "line",
+                data: {
+                    labels: dates,
+                    datasets: [{
+                        label: "Calories",
+                        data: calories
+                    }]
+                },
+            })
+            */
+
+        </script>
+        <script>
+
+            $(function(){
+                $("#nav-placeholder").load("nav_bar.html");
+            });
+        </script>
+        
+    
+    </body>
+</html>

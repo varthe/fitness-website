@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+        <title>Home</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="styles_new.css">
+    </head>
+    <body>
+            <div id="nav-placeholder">
+
+            </div>
+            <!-- main -->
+            <div class="main">
+                <div class="topbar">
+                    <div class="toggle"><span class="material-symbols-outlined">menu</span></div>
+                </div>
+                <form ref="uploadForm" id="uploadForm" action="/upload" method="post" encType="multipart/form-data">
+                    <input type="file" name="userFile" />
+                    <input type="submit" value="Upload" />
+                </form>
+
+            </div>
+
+
+            
+
+
+        </div>
+        <script>
+            $(function(){
+                $("#nav-placeholder").load("nav_bar.html");
+            });
+        </script>
+        
+    
+    </body>
+</html>
